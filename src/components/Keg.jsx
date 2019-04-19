@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import kegImg from '../assets/images/keg.jpg';
-// import PropTypes from 'prop-types';
+import bubbles from '../assets/images/bubbles.png';
+import kegWood from '../assets/images/kegWood.jpg';
 
 function Keg(props){
+
+  function percent(pints){
+    const percent = pints/120 * 100;
+    return percent;
+  }
+
   return (
     <div className="container">
       <div className="keg">
-        <img src={kegImg} />
+        <div className="fill"><div className="liquid"><img src={bubbles}/></div></div>
         <section>
           <h5>{props.name}</h5>
           <p>${props.price}</p>
@@ -17,14 +23,36 @@ function Keg(props){
       </div>
       <style jsx>{`
         .container{
-          width: 25%;
+          width: 23%;
+          margin: 20px 1% 0 1%;
         }
         .keg{
           display: flex;
         }
+        .fill{
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          width: 50%;
+          background-image:  url(${kegWood});
+          background-size: cover;
+          border-radius: 40%;
+          overflow: hidden;
+        }
+        .liquid{
+          width: 100%;
+          height: ${percent(props.fullness)}%;
+          background-color: goldenrod;
+        }
         img{
-          width: 50px;
-          height: 50px;
+          width: 100%;
+          height: auto;
+        }
+        section{
+          width: 50%;
+        }
+        h5{
+          margin-top: 0;
         }
       `}</style>
     </div>

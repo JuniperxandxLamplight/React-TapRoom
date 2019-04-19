@@ -61,6 +61,8 @@ function KegList(){
       <style jsx>{`
         div{
           display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
         }
       `}</style>
     </div>

@@ -24,7 +24,9 @@ function Keg(props){
       <style jsx>{`
         .container{
           width: 23%;
+          height: 25%;
           margin: 20px 1% 0 1%;
+          text-align: center;
         }
         .keg{
           display: flex;
@@ -43,6 +45,7 @@ function Keg(props){
           width: 100%;
           height: ${percent(props.fullness)}%;
           background-color: goldenrod;
+          border-top: 4px solid white;
         }
         img{
           width: 100%;
@@ -52,7 +55,8 @@ function Keg(props){
           width: 50%;
         }
         h5{
-          margin-top: 0;
+          font-size: 1.5rem;
+          margin-bottom: 0;
         }
       `}</style>
     </div>

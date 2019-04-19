@@ -6,7 +6,7 @@
 
 ## Description
 
-_This application provides the ability to add kegs, track their fullness, and order more kegs for the purposes of organization in restaurant settings._
+_This application provides the ability to add kegs, track their fullness, and order more kegs for the purposes of organization in restaurant settings. It is a companion to the angular taproom project I've made. The differences between Angular and React in theory aren't that completely different but I find React much more intuitive. Holding all the code for one component in one file and then just passing data down as arguments make a lot of sense. I find not having to switch between the files does speed up the development process quite a bit, as well as being able to always know where data is stored._
 
 ## Component Tree
 

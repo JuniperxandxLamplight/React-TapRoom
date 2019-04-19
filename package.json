@@ -1,7 +1,7 @@
 {
-  "name": "react-template",
+  "name": "react-taproom",
   "version": "1.0.0",
-  "description": "This will act as template",
+  "description": "Taproom website in React",
   "main": "index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,7 +17,7 @@
     "react",
     "template"
   ],
-  "author": "Ryan",
+  "author": "Aurora S.W",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Lilkgb/react-template"

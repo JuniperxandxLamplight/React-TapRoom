@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../scss/styles.scss';
 
 function Header(){
   return (
     <div>
-      <h1 className='bg-grn header'>Help Queue!</h1>
-      <Link to="/">Home</Link> | <Link to="/newticket">Create Ticket</Link>
+      <h1>TapRoom</h1>
+      <style jsx>{`
+        div{
+          width: 100%;
+        }
+        h1{
+          text-align: center;
+        }
+      `}</style>
     </div>
   );
 }

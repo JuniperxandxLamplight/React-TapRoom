@@ -12,48 +12,14 @@ _This application provides the ability to add kegs, track their fullness, and or
 
 ![alt text](src/assets/images/component-map.png)
 
-<!-- #### Researched Sites
+## Notes
 
-Company Site | What I Liked | What I Didn't
-------------- | ----- | ------
-WeWork | Clean design, Smooth media queries, Lots of info throughout | Too much white, Boring design, Lots of click throughs
-TechSpace | Visually interesting, Consistent color scheme | Specific info pages kind of bare, Poor visual hierarchy
-Case Study | More intimate/niche feeling, Unique visual style | Limited info, Empty looking pages
+### Unforseen Issues
+_Webpack configuring took longer than expected; getting everything working perfectly in that might be a longer process than coding any individual feature_
+_PropTypes aren't working; the props themselves are but I'm not sure why the PropTypes woudln't be._
+_Styling between components can be tricky. Sometimes I needed to set the width in the parent component instead._
 
-#### Ideas
-* _Amenities in a prominent position_
-* _Limited color scheme, warm and graphic (tan, light pink, and sky blue maybe?)_
-* _Unique Features given more visual space and weight_
-* _Very obvious layout for clients not in the tech field/tech-illiterate_
-* _Community features?_
-* _Profile/login pages_
-
-## Paper Sketches
-
-![alt text](src/assets/images/sketches/IMG_9362.JPG)
-![alt text](src/assets/images/sketches/IMG_9363.JPG)
-![alt text](src/assets/images/sketches/IMG_9364.JPG)
-![alt text](src/assets/images/sketches/IMG_9365.JPG)
-![alt text](src/assets/images/sketches/IMG_9366.JPG)
-![alt text](src/assets/images/sketches/IMG_9367.JPG)
-![alt text](src/assets/images/sketches/IMG_9368.JPG)
-![alt text](src/assets/images/sketches/IMG_9369.JPG)
-![alt text](src/assets/images/sketches/IMG_9370.JPG)
-![alt text](src/assets/images/sketches/IMG_9371.JPG)
-![alt text](src/assets/images/sketches/IMG_9372.JPG)
-
-## Sketch Wireframes
-
-![alt text](src/assets/images/wireframes/landing-pic.png)
-![alt text](src/assets/images/wireframes/menu-pic.png)
-![alt text](src/assets/images/wireframes/contact-pic.png)
-![alt text](src/assets/images/wireframes/team-select-pic.png)
-![alt text](src/assets/images/wireframes/packages-pic.png)
-![alt text](src/assets/images/wireframes/form-empty-pic.png)
-![alt text](src/assets/images/wireframes/form-partial-pic.png)
-![alt text](src/assets/images/wireframes/form-complete-pic.png)
-
-## Setup/Installation Requirements
+<!-- ## Setup/Installation Requirements
 
 * _Use your command terminal (gitbash if you're using a windows machine) to clone the latest commit from Github, using the url provided_
 * _Open with a text editor such as Atom to view the code_

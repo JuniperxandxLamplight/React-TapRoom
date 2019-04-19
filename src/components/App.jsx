@@ -15,6 +15,5 @@ function App(){
     </div>
   );
 }
-// <Route exact path='/' component={} />
 
 export default App;

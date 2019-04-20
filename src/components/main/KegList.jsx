@@ -18,7 +18,7 @@ const currentKegs = [
     fullness: 80,
   },
   {
-    name: 'Guava Coconut Mochi',
+    name: 'Coconut Mochi',
     maker: 'Great Notion',
     price: 5,
     percent: 7,

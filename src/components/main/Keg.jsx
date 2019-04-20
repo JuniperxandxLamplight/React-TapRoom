@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import bubbles from '../assets/images/bubbles.png';
-import kegWood from '../assets/images/kegWood.jpg';
+import bubbles from '../../assets/images/bubbles.png';
+import kegWood from '../../assets/images/kegWood.jpg';
 
 function Keg(props){
 
@@ -23,7 +23,7 @@ function Keg(props){
       </div>
       <style jsx>{`
         .container{
-          width: 23%;
+          width: 30%;
           height: 25%;
           margin: 20px 1% 0 1%;
           text-align: center;

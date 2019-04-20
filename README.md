@@ -35,7 +35,7 @@ _If you encounter any bugs or issues not documented during your experience, plea
 
 ## Technologies used
 
-_This application was created using HTML and CSS_
+_This application was created using React with JSX_
 
 ### License
 

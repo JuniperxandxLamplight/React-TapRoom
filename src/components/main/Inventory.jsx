@@ -6,8 +6,6 @@ function Inventory(){
   return (
     <div>
       <KegList></KegList>
-      <style jsx>{`
-      `}</style>
     </div>
   );
 }

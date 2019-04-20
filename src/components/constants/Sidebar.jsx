@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import background from "../../assets/images/sideWood.jpg";
 
 function Sidebar(){
   return(
     <div>
-      <Link to="/">Inventory</Link>
-      <Link to="/order">New Order</Link>
+      <Link to="/"><p>Inventory</p></Link>
+      <Link to="/order"><p>Order</p></Link>
       <style jsx>{`
         div{
           float: left;
@@ -13,7 +14,12 @@ function Sidebar(){
           flex-direction: column;
           width: 10%;
           height: 100vh;
-          background: gray;
+          background-image: url(${background});
+          background-size: cover;
+        }
+        p{
+          text-decoration: none;
+          color: white;
         }
       `}</style>
     </div>

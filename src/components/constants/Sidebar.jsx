@@ -17,8 +17,8 @@ function Sidebar(){
           display: flex;
           flex-direction: column;
           width: 10%;
-          min-height: 475px;
-          height: 80vh;
+          min-height: 80vh;
+          height: 100%;
           background-image: url(${background});
           background-size: cover;
           box-shadow: 5px 5px 10px gray;
@@ -31,10 +31,11 @@ function Sidebar(){
           padding: 10px;
           border-radius: 5px;
           border: 2px solid transparent;
-          transition: border .3s;
+          transition: border .3s, box-shadow .3s;
         }
         p:hover{
           border: 2px solid white;
+          box-shadow: 0px 7px 10px black;
         }
       `}</style>
     </div>

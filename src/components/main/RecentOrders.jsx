@@ -12,6 +12,11 @@ function RecentOrders(props){
           <p>{order.time} {order.date}</p>
         </section>
       )}
+      <style jsx>{`
+        div{
+          width: 50%;
+        }
+      `}</style>
     </div>
   );
 }

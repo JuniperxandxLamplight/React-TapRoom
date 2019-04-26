@@ -64,6 +64,8 @@ function KegList(){
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
+          min-height: 450px;
+          height: 80vh;
         }
       `}</style>
     </div>

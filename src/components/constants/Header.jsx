@@ -9,6 +9,7 @@ function Header(){
       <style jsx>{`
         div{
           width: 100%;
+          height: 20vh;
           background-image: url(${headerBackground});\
           box-shadow: 0px 5px 10px gray;
         }
@@ -18,7 +19,7 @@ function Header(){
           font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
           font-size: 3rem;
           text-align: center;
-          color: lightgray;
+          color: white;
         }
       `}</style>
     </div>

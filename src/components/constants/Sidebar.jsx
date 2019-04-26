@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import background from "../../assets/images/sideWood.jpg";
+import background from '../../assets/images/darkWood.jpg';
 
 const linkStyle = {
   textDecoration: 'none',
-  // marginLeft: '30px'
 }
 
 function Sidebar(){
@@ -18,9 +17,11 @@ function Sidebar(){
           display: flex;
           flex-direction: column;
           width: 10%;
-          height: 100vh;
+          min-height: 475px;
+          height: 80vh;
           background-image: url(${background});
           background-size: cover;
+          box-shadow: 5px 5px 10px gray;
         }
         p{
           font-size: 1.5rem;

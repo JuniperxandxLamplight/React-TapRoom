@@ -93,9 +93,9 @@ class App extends React.Component{
     let stateSlice = Object.assign({}, this.state);
     stateSlice.Kegs[beer].fullness -= this.state.Pints;
     stateSlice.Orders.push({name: stateSlice.Kegs[beer].name, pints: stateSlice.Pints, date: date, time: time});
-    // stateSlice.Pints = 1;
+    stateSlice.Pints = 1;
     console.log(stateSlice);
-    this.setState({stateSlice});
+    this.setState(stateSlice);
     console.log(this.state);
   }
 

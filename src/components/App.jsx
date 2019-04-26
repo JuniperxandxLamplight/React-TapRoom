@@ -63,11 +63,22 @@ class App extends React.Component{
       },
       Orders: []
     }
+    this.handleNewOrder = this.handleNewOrder.bind(this);
   }
 
-  handleNewOrder(beer, date, time){
-    let stateSlice = {...this.state, Kegs[beer].fullnes -= 1};
-    stateSlice.Orders.push({})
+  handleNewOrder(beer){
+    const dateObject = new Date();
+    const orderDay = dateObject.getDate();
+    const orderMonth = dateObject.getMonth();
+    const orderHours = dateObject.getHours();
+    const orderMinutes = dateObject.getMinutes();
+    const date = `${orderMonth}/${orderDay}`;
+    const time = `${orderHours}:${orderMinutes}`;
+    let stateSlice = Object.assign({}, this.state);
+    console.log(stateSlice);
+    stateSlice.Kegs[beer].fullness -= 1;
+    stateSlice.Orders.push({name: stateSlice.Kegs[beer].name, date: date, time: time});
+    this.setState({stateSlice});
   }
 
   render(){
@@ -77,7 +88,7 @@ class App extends React.Component{
       <Sidebar/>
       <Switch>
       <Route exact path='/' render={() => <Inventory kegs={this.state.Kegs} />}/>
-      <Route path='/order' render={() => <Order kegs={this.state.Kegs} orders={this.state.Orders}/>} />
+      <Route path='/order' render={() => <Order onNewOrder={this.handleNewOrder} kegs={this.state.Kegs} orders={this.state.Orders}/>} />
       <Route component={Error404}/>
       </Switch>
       </div>

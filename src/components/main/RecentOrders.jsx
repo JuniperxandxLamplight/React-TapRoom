@@ -5,8 +5,10 @@ function RecentOrders(props){
     <div>
       <h1>Recent Orders</h1>
       {props.orders.map((order, i) =>
-        <h4>{order.name}</h4>
-        <p>{order.date} {order.time}</p>
+        <section>
+          <h4>{order.name}</h4>
+          <p>{order.time} {order.date}</p>
+        </section>
       )}
     </div>
   );

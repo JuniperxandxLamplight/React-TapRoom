@@ -11,6 +11,7 @@ function Order(props){
         div{
           display: flex;
           margin: 2vw 0 0 12vw;
+          font-family: sans-serif;
         }
       `}</style>
     </div>

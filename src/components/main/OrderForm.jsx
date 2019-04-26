@@ -1,26 +1,34 @@
 import React from 'react';
 
 function OrderForm(props){
-  let _beer = 'Luminous 04';
+  let _beer = 'orig1';
+
+
+  function updatePrice(beer){
+    const price = props.pints * props.kegs[beer].price;
+    return price;
+  }
 
   function handleNewOrderSubmission(event){
     event.preventDefault();
-    props.onNewOrder(_beer.value);
-    _beer = 'Luminous 04';
+    const price = updatePrice(_beer.value);
+    props.onNewOrder(_beer.value, price);
+    _beer = 'orig1';
   }
 
   return(
     <div>
-      <button onClick={props.onAddPint}>+</button>
+    <button onClick={props.onSubtractPint}>-</button>
       <h3>{props.pints}</h3>
-      <button onClick={props.onSubtractPint}>-</button>
+      <button onClick={props.onAddPint}>+</button>
       <form onSubmit={(handleNewOrderSubmission)}>
         <select ref={(select) => {_beer = select;}}>
           {Object.keys(props.kegs).map((keg, i) =>
             <option value={props.kegs[keg].id} key={i}>{props.kegs[keg].name}</option>
           )}
         </select>
-        <button id="submit" type='submit'>Order a Pint</button>
+        <p>${updatePrice(_beer)}</p>
+        <button id="submit" type='submit'>Order</button>
       </form>
       <style jsx>{`
         div{
@@ -31,6 +39,9 @@ function OrderForm(props){
         h3{
           display: inline;
           margin: 0 20px;
+        }
+        p{
+          font-weight: 500;
         }
         button{
           font-size: 1.5rem;
@@ -60,10 +71,8 @@ function OrderForm(props){
           border: 2px solid black;
           box-shadow: 0px 3px 7px gray;
         }
-        select:focus{
+        select:focus, button:focus{
           outline: none;
-          border-bottom-right-radius: 0;
-          border-bottom-left-radius: 0;
         }
       `}</style>
     </div>

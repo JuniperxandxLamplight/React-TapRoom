@@ -39,7 +39,7 @@ class App extends React.Component{
         orig4: {
           name: 'Puppy Love',
           maker: 'Great Notion',
-          price: 6,
+          price: 5,
           percent: 5.4,
           fullness: 111,
           id: 'orig4'
@@ -47,7 +47,7 @@ class App extends React.Component{
         orig5: {
           name: 'Carnival',
           maker: 'Great Notion',
-          price: 7,
+          price: 5,
           percent: 9,
           fullness: 20,
           id: 'orig5'
@@ -55,7 +55,7 @@ class App extends React.Component{
         orig6: {
           name: 'Double Stack',
           maker: 'Great Notion',
-          price: 4,
+          price: 5,
           percent: 4,
           fullness: 57,
           id: 'orig6'
@@ -77,12 +77,16 @@ class App extends React.Component{
   }
   handleSubtractPint(){
     let stateSlice = Object.assign({}, this.state);
+    if (stateSlice.Pints === 1){
+      return;
+    } else {
       stateSlice.Pints -= 1;
+    }
     this.setState({Pints: stateSlice.Pints});
     console.log(this.state);
   }
 
-  handleNewOrder(beer){
+  handleNewOrder(beer, price){
     const dateObject = new Date();
     const orderDay = dateObject.getDate();
     const orderMonth = dateObject.getMonth();
@@ -92,7 +96,7 @@ class App extends React.Component{
     const time = `${orderHours}:${orderMinutes}`;
     let stateSlice = Object.assign({}, this.state);
     stateSlice.Kegs[beer].fullness -= this.state.Pints;
-    stateSlice.Orders.push({name: stateSlice.Kegs[beer].name, pints: stateSlice.Pints, date: date, time: time});
+    stateSlice.Orders.unshift({name: stateSlice.Kegs[beer].name, pints: stateSlice.Pints, price: price, date: date, time: time});
     stateSlice.Pints = 1;
     console.log(stateSlice);
     this.setState(stateSlice);

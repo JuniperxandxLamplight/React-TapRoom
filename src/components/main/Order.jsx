@@ -1,8 +1,14 @@
 import React from 'react';
+import OrderForm from './OrderForm';
+import RecentOrders from './RecentOrders';
 
-function Order(){
+function Order(props){
   return(
     <div>
+      <OrderForm kegs={props.kegs}/>
+      <RecentOrders orders={props.orders}/>
     </div>
-  )
+  );
 }
+
+export default Order;

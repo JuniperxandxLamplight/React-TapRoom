@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import KegList from './KegList';
 
-function Inventory(){
+function Inventory(props){
+
   return (
     <div>
-      <KegList></KegList>
+      <KegList kegs={props.kegs}></KegList>
     </div>
   );
 }

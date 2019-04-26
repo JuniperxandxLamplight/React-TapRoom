@@ -5,7 +5,7 @@ import RecentOrders from './RecentOrders';
 function Order(props){
   return(
     <div>
-      <OrderForm onNewOrder={props.onNewOrder} kegs={props.kegs}/>
+      <OrderForm onAddPint={props.onAddPint} onSubtractPint={props.onSubtractPint} onNewOrder={props.onNewOrder} pints={props.pints} kegs={props.kegs}/>
       <RecentOrders orders={props.orders}/>
     </div>
   );

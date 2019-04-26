@@ -61,9 +61,25 @@ class App extends React.Component{
           id: 'orig6'
         }
       },
-      Orders: []
+      Orders: [],
+      Pints: 1
     }
     this.handleNewOrder = this.handleNewOrder.bind(this);
+    this.handleAddPint = this.handleAddPint.bind(this);
+    this.handleSubtractPint = this.handleSubtractPint.bind(this);
+  }
+
+  handleAddPint(){
+    let stateSlice = Object.assign({}, this.state);
+      stateSlice.Pints += 1;
+    this.setState({Pints: stateSlice.Pints});
+    console.log(this.state);
+  }
+  handleSubtractPint(){
+    let stateSlice = Object.assign({}, this.state);
+      stateSlice.Pints -= 1;
+    this.setState({Pints: stateSlice.Pints});
+    console.log(this.state);
   }
 
   handleNewOrder(beer){
@@ -75,10 +91,12 @@ class App extends React.Component{
     const date = `${orderMonth}/${orderDay}`;
     const time = `${orderHours}:${orderMinutes}`;
     let stateSlice = Object.assign({}, this.state);
+    stateSlice.Kegs[beer].fullness -= this.state.Pints;
+    stateSlice.Orders.push({name: stateSlice.Kegs[beer].name, pints: stateSlice.Pints, date: date, time: time});
+    // stateSlice.Pints = 1;
     console.log(stateSlice);
-    stateSlice.Kegs[beer].fullness -= 1;
-    stateSlice.Orders.push({name: stateSlice.Kegs[beer].name, date: date, time: time});
     this.setState({stateSlice});
+    console.log(this.state);
   }
 
   render(){
@@ -88,7 +106,7 @@ class App extends React.Component{
       <Sidebar/>
       <Switch>
       <Route exact path='/' render={() => <Inventory kegs={this.state.Kegs} />}/>
-      <Route path='/order' render={() => <Order onNewOrder={this.handleNewOrder} kegs={this.state.Kegs} orders={this.state.Orders}/>} />
+      <Route path='/order' render={() => <Order onAddPint={this.handleAddPint} onSubtractPint={this.handleSubtractPint} onNewOrder={this.handleNewOrder} pints={this.state.Pints} kegs={this.state.Kegs} orders={this.state.Orders}/>} />
       <Route component={Error404}/>
       </Switch>
       </div>

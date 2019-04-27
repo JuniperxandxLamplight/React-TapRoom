@@ -13,15 +13,20 @@ function Sidebar(){
       <Link to="/order" style={linkStyle}><p>Order</p></Link>
       <style jsx>{`
         div{
+          z-index: -1;
+          position: fixed;
+          top: 0;
           float: left;
           display: flex;
           flex-direction: column;
           width: 10%;
-          min-height: 80vh;
-          height: 100%;
+          min-height: 100vh;
           background-image: url(${background});
           background-size: cover;
           box-shadow: 5px 5px 10px gray;
+        }
+        p:first-child{
+          margin-top: 25vh;
         }
         p{
           font-size: 1.5rem;

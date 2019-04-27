@@ -10,6 +10,17 @@ function Keg(props){
     return percent;
   }
 
+  function handleRefill(event){
+    event.preventDefault();
+    props.onRefillKeg(props.id);
+  }
+
+  let refillButton = 'clear'
+  if(props.refill){
+    refillButton = 'btn'
+  } else if (!props.refill){
+    refillButton = 'clear'
+  }
   return (
     <div className="container">
       <div className="keg">
@@ -19,6 +30,7 @@ function Keg(props){
           <p>${props.price}</p>
           <p>{props.maker}</p>
           <p>{props.fullness} Pints Left</p>
+          <button onClick={handleRefill} className={refillButton}>Refill</button>
         </section>
       </div>
       <style jsx>{`
@@ -46,6 +58,7 @@ function Keg(props){
           height: ${percent(props.fullness)}%;
           background-color: goldenrod;
           border-top: 4px solid white;
+          transition: height 1s;
         }
         img{
           width: 100%;
@@ -57,6 +70,26 @@ function Keg(props){
         h5{
           font-size: 1.5rem;
           margin-bottom: 0;
+        }
+        .clear{
+          background: transparent;
+          color: transparent;
+          border: none;
+        }
+        .btn{
+          font-size: 1.5rem;
+          padding: 5px 15px;
+          background: transparent;
+          border-radius: 10px;
+          border: none;
+          transition: border .3s, box-shadow .3s;
+        }
+        .btn:hover{
+          border: 2px solid maroon;
+          box-shadow: 0px 3px 7px gray;
+        }
+        .btn:focus, .clear:focus{
+          outline: none;
         }
       `}</style>
     </div>

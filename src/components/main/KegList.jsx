@@ -12,7 +12,10 @@ function KegList(props){
           price={props.kegs[keg].price}
           percent={props.kegs[keg].percent}
           fullness={props.kegs[keg].fullness}
-          key={props.kegs[keg].fullness}
+          refill={props.kegs[keg].refill}
+          id={props.kegs[keg].id}
+          key={props.kegs[keg].id}
+          onRefillKeg={props.onRefillKeg}
         />
       )}
       <style jsx>{`
@@ -22,6 +25,9 @@ function KegList(props){
           justify-content: center;
           min-height: 450px;
           height: 80vh;
+        }
+        Keg{
+          margin: 10px 0;
         }
       `}</style>
     </div>

@@ -18,15 +18,15 @@ function OrderForm(props){
 
   return(
     <div>
-    <button onClick={props.onSubtractPint}>-</button>
-      <h3>{props.pints}</h3>
-      <button onClick={props.onAddPint}>+</button>
       <form onSubmit={(handleNewOrderSubmission)}>
         <select ref={(select) => {_beer = select;}}>
           {Object.keys(props.kegs).map((keg, i) =>
             <option value={props.kegs[keg].id} key={i}>{props.kegs[keg].name}</option>
           )}
         </select>
+        <div className="btn" onClick={props.onSubtractPint}>-</div>
+        <h3>{props.pints}</h3>
+        <div className="btn" onClick={props.onAddPint}>+</div>
         <p>${updatePrice(_beer)}</p>
         <button id="submit" type='submit'>Order</button>
       </form>
@@ -55,7 +55,20 @@ function OrderForm(props){
           padding: 10px 20px;
         }
         button:hover{
-          border: 2px solid black;
+          border: 2px solid maroon;
+          box-shadow: 0px 3px 7px gray;
+        }
+        .btn{
+          display: inline;
+          font-size: 1.5rem;
+          padding: 5px 15px;
+          background: transparent;
+          border-radius: 10px;
+          border: none;
+          transition: border .3s, box-shadow .3s;
+        }
+        .btn:hover{
+          border: 2px solid maroon;
           box-shadow: 0px 3px 7px gray;
         }
         select{
@@ -63,12 +76,13 @@ function OrderForm(props){
           margin: 10px auto;
           font-size: 2.5rem;
           border: none;
+          background-color: transparent;
           border-top-right-radius: 10px;
           border-top-left-radius: 10px;
           transition: border .3s, box-shadow .3s;
         }
         select:hover{
-          border: 2px solid black;
+          border: 2px solid maroon;
           box-shadow: 0px 3px 7px gray;
         }
         select:focus, button:focus{

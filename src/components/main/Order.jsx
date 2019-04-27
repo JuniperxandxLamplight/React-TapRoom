@@ -9,11 +9,12 @@ function Order(props){
       <OrderForm onAddPint={props.onAddPint} onSubtractPint={props.onSubtractPint} onNewOrder={props.onNewOrder} pints={props.pints} kegs={props.kegs}/>
       <style jsx>{`
         div{
+          float: right;
+          width: 88%;
           display: flex;
-          margin: 2vw 0 0 12vw;
           font-family: sans-serif;
         }
-      `}</style>
+        `}</style>
     </div>
   );
 }

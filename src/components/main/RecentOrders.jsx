@@ -8,7 +8,7 @@ function RecentOrders(props){
       {props.orders.map((order, i) =>
         <section key={v4()}>
           <h4>{order.name}</h4>
-          <p>{order.pints} Pints ${order.price}</p> 
+          <p>{order.pints} Pints ${order.price}</p>
           <p>{order.time} {order.date}</p>
         </section>
       )}
@@ -21,7 +21,7 @@ function RecentOrders(props){
           transition: border .3s;
         }
         section:hover{
-          border-left: 3px solid black;
+          border-left: 3px solid maroon;
         }
       `}</style>
     </div>

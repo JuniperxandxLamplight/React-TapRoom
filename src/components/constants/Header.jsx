@@ -11,7 +11,7 @@ function Header(){
           width: 100%;
           height: 20vh;
           background-image: url(${headerBackground});\
-          box-shadow: 0px 5px 10px gray;
+          box-shadow: 0px 5px 10px black;
         }
         h1{
           margin: 0;

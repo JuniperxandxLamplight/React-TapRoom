@@ -18,6 +18,7 @@ class App extends React.Component{
           price: 5,
           percent: 6,
           fullness: 100,
+          refill: false,
           id: 'orig1'
         },
         orig2: {
@@ -26,6 +27,7 @@ class App extends React.Component{
           price: 5,
           percent: 5.8,
           fullness: 80,
+          refill: false,
           id: 'orig2'
         },
         orig3: {
@@ -34,6 +36,7 @@ class App extends React.Component{
           price: 5,
           percent: 7,
           fullness: 40,
+          refill: false,
           id: 'orig3'
         },
         orig4: {
@@ -42,6 +45,7 @@ class App extends React.Component{
           price: 5,
           percent: 5.4,
           fullness: 111,
+          refill: false,
           id: 'orig4'
         },
         orig5: {
@@ -50,6 +54,7 @@ class App extends React.Component{
           price: 5,
           percent: 9,
           fullness: 20,
+          refill: true,
           id: 'orig5'
         },
         orig6: {
@@ -58,6 +63,7 @@ class App extends React.Component{
           price: 5,
           percent: 4,
           fullness: 57,
+          refill: false,
           id: 'orig6'
         }
       },
@@ -67,6 +73,7 @@ class App extends React.Component{
     this.handleNewOrder = this.handleNewOrder.bind(this);
     this.handleAddPint = this.handleAddPint.bind(this);
     this.handleSubtractPint = this.handleSubtractPint.bind(this);
+    this.handleRefillKeg = this.handleRefillKeg.bind(this);
   }
 
   handleAddPint(){
@@ -83,7 +90,6 @@ class App extends React.Component{
       stateSlice.Pints -= 1;
     }
     this.setState({Pints: stateSlice.Pints});
-    console.log(this.state);
   }
 
   handleNewOrder(beer, price){
@@ -96,11 +102,19 @@ class App extends React.Component{
     const time = `${orderHours}:${orderMinutes}`;
     let stateSlice = Object.assign({}, this.state);
     stateSlice.Kegs[beer].fullness -= this.state.Pints;
+    if (stateSlice.Kegs[beer].fullness <= 20){
+      stateSlice.Kegs[beer].refill = true;
+    }
     stateSlice.Orders.unshift({name: stateSlice.Kegs[beer].name, pints: stateSlice.Pints, price: price, date: date, time: time});
     stateSlice.Pints = 1;
-    console.log(stateSlice);
     this.setState(stateSlice);
-    console.log(this.state);
+  }
+
+  handleRefillKeg(id){
+    let stateSlice = Object.assign({}, this.state);
+    stateSlice.Kegs[id].fullness = 120;
+    stateSlice.Kegs[id].refill = false;
+    this.setState(stateSlice);
   }
 
   render(){
@@ -109,7 +123,7 @@ class App extends React.Component{
       <Header/>
       <Sidebar/>
       <Switch>
-      <Route exact path='/' render={() => <Inventory kegs={this.state.Kegs} />}/>
+      <Route exact path='/' render={() => <Inventory onRefillKeg={this.handleRefillKeg} kegs={this.state.Kegs} />}/>
       <Route path='/order' render={() => <Order onAddPint={this.handleAddPint} onSubtractPint={this.handleSubtractPint} onNewOrder={this.handleNewOrder} pints={this.state.Pints} kegs={this.state.Kegs} orders={this.state.Orders}/>} />
       <Route component={Error404}/>
       </Switch>

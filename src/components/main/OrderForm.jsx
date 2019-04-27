@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function OrderForm(props){
   let _beer = 'orig1';
@@ -91,6 +92,14 @@ function OrderForm(props){
       `}</style>
     </div>
   );
+}
+
+OrderForm.propTypes = {
+  onAddPint: PropTypes.func,
+  onSubtractPint: PropTypes.func,
+  onNewOrder: PropTypes.func,
+  pints: PropTypes.number,
+  kegs: PropTypes.object
 }
 
 export default OrderForm;

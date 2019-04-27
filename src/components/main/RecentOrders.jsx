@@ -1,5 +1,6 @@
 import React from 'react';
 import {v4} from 'uuid';
+import PropTypes from 'prop-types';
 
 function RecentOrders(props){
   return(
@@ -26,6 +27,10 @@ function RecentOrders(props){
       `}</style>
     </div>
   );
+}
+
+RecentOrders.propTypes = {
+  orders: PropTypes.array
 }
 
 export default RecentOrders;

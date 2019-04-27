@@ -5,13 +5,15 @@
   "main": "index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
     "start": "webpack-dev-server",
     "lint": "eslint src/** src/**/**; exit 0",
-    "fix": "eslint src/** src/**/** --fix; exit 0"
+    "fix": "eslint src/** src/**/** --fix; exit 0",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lilkgb/react-template"
+    "url": "git+https://github.com/JuniperxandxLamplight/React-TapRoom"
   },
   "keywords": [
     "react",
@@ -20,9 +22,9 @@
   "author": "Aurora S.W",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Lilkgb/react-template"
+    "url": "https://github.com/JuniperxandxLamplight/React-TapRoom"
   },
-  "homepage": "https://github.com/Lilkgb/react-template",
+  "homepage": "https://github.com/JuniperxandxLamplight/React-TapRoom",
   "dependencies": {
     "aos": "^3.0.0-beta.6",
     "css-loader": "^2.1.1",
@@ -44,6 +46,7 @@
     "eslint-loader": "^2.1.2",
     "eslint-plugin-react": "^7.12.4",
     "file-loader": "^1.1.6",
+    "gh-pages": "^2.0.1",
     "html-webpack-plugin": "^2.29.0",
     "node-sass": "^4.11.0",
     "react-hot-loader": "^3.0.0-beta.7",

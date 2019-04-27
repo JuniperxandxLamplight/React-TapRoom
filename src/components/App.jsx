@@ -5,7 +5,6 @@ import Sidebar from './constants/Sidebar';
 import Inventory from './main/Inventory';
 import Order from './main/Order';
 import Error404 from './Error404';
-
 class App extends React.Component{
 
   constructor(props){

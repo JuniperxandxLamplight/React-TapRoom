@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import OrderForm from './OrderForm';
 import RecentOrders from './RecentOrders';
 
@@ -17,6 +18,15 @@ function Order(props){
         `}</style>
     </div>
   );
+}
+
+Order.propTypes = {
+  onAddPint: PropTypes.func,
+  onSubtractPint: PropTypes.func,
+  onNewOrder: PropTypes.func,
+  pints: PropTypes.number,
+  kegs: PropTypes.object,
+  orders: PropTypes.array
 }
 
 export default Order;

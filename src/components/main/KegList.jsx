@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Keg from './Keg';
 
@@ -32,6 +33,11 @@ function KegList(props){
       `}</style>
     </div>
   );
+}
+
+KegList.propTypes = {
+  onRefillKeg: PropTypes.func,
+  kegs: PropTypes.object
 }
 
 export default KegList;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import bubbles from '../../assets/images/bubbles.png';
 import kegWood from '../../assets/images/kegWood.jpg';
@@ -96,12 +97,15 @@ function Keg(props){
   );
 }
 
-// Keg.propTypes = {
-//   name: PropTypes.string,
-//   maker: Proptypes.string,
-//   price: Proptypes.number,
-//   percent: Proptypes.number,
-//   fullness: Proptypes.number
-// }
+Keg.propTypes = {
+  onRefillKeg: PropTypes.func,
+  name: PropTypes.string,
+  maker: PropTypes.string,
+  price: PropTypes.number,
+  percent: PropTypes.number,
+  fullness: PropTypes.number,
+  refill: PropTypes.boolean,
+  id: PropTypes.string
+}
 
 export default Keg;

@@ -19,7 +19,7 @@ _Webpack configuring took longer than expected; getting everything working perfe
 _PropTypes aren't working; the props themselves are but I'm not sure why the PropTypes woudln't be._
 _Styling between components can be tricky. Sometimes I needed to set the width in the parent component instead._
 
-<!-- ## Setup/Installation Requirements
+## Setup/Installation Requirements
 
 * _Use your command terminal (gitbash if you're using a windows machine) to clone the latest commit from Github, using the url provided_
 * _Open with a text editor such as Atom to view the code_
@@ -28,9 +28,10 @@ _Styling between components can be tricky. Sometimes I needed to set the width i
 
 ## Known Bugs
 
-_images do not show up sometimes_
+_Kegs can be drained past 0_
 
 ## Support and contact details
+
 _If you encounter any bugs or issues not documented during your experience, please feel free to contact me at my email: fullmetalwoman@gmail.com_
 
 ## Technologies used
@@ -57,4 +58,4 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE. -->
+SOFTWARE.
